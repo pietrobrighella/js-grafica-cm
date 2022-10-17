@@ -43,13 +43,20 @@ function gameStart(){
             `
             gameCamp.appendChild(cell);
             cell.addEventListener('click', function(){
-                this.classList.add('bg-success');
+                if(bombPos.includes(i)){
+                    this.classList.add('bg-danger');
+                    const gameOver = document.createElement('div');
+                    gameOver.classList = 'game-over d-flex justify-content-center align-items-center';
+                    gameOver.innerHTML = `<h3>GAME OVER</h3>`;
+                    gameCamp.appendChild(gameOver);
+                } else {
+                    this.classList.add('bg-success');
+                }
             })
         }
     }
 
     drawCamp();
-
 }
 
 startButton.addEventListener('click', gameStart);
