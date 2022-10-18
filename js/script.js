@@ -46,7 +46,7 @@ function gameStart(){
                 if(bombPos.includes(i)){
                     this.classList.add('bg-danger');
                     const gameOver = document.createElement('div');
-                    gameOver.classList = 'game-over d-flex justify-content-center align-items-center';
+                    gameOver.classList = 'game-over d-flex justify-content-center align-items-center shadow-lg';
                     gameOver.innerHTML = `<h3>GAME OVER</h3>`;
                     gameCamp.appendChild(gameOver);
                 } else {
